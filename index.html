@@ -1,385 +1,583 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian & Co. — Global Markets, INR Settled</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  --paper:#F7F5EF;
+  --paper-dim:#EFEBE0;
+  --ink:#15140F;
+  --ink-soft:#5B5848;
+  --ink-faint:#A39D88;
+  --rule:#D8D2BF;
+  --green:#1B4332;
+  --green-soft:#E7EEE9;
+  --brass:#8A6D3B;
+  --brass-soft:#F1E9D6;
+  --red:#8C2E2E;
+  --white:#FFFFFF;
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
-.page{font-family:'Inter',var(--font-sans);background:#0A0F1E;color:#E8EDF5}
 
-.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:#0D1426;border-bottom:0.5px solid #1E2D4A}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.logo-mark{width:34px;height:34px;background:#1A56DB;border-radius:8px;display:flex;align-items:center;justify-content:center}
-.logo-mark i{font-size:18px;color:#fff}
-.logo-text{font-size:16px;font-weight:600;color:#fff;letter-spacing:-0.01em}
-.nav-badge{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:#34D399;background:rgba(52,211,153,0.1);border:0.5px solid rgba(52,211,153,0.3);padding:5px 12px;border-radius:20px}
-.nav-badge i{font-size:13px}
+.page{
+  font-family:'Inter',var(--font-sans);
+  background:var(--paper);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
 
-.hero{padding:3rem 1.5rem 2.5rem;text-align:center;background:#0D1426;border-bottom:0.5px solid #1E2D4A;position:relative}
-.hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:#93C5FD;background:rgba(59,130,246,0.12);border:0.5px solid rgba(59,130,246,0.3);padding:5px 14px;border-radius:20px;margin-bottom:1.25rem;letter-spacing:0.04em}
-.hero h1{font-size:30px;font-weight:600;color:#fff;line-height:1.25;margin-bottom:0.75rem;letter-spacing:-0.02em}
-.hero h1 .accent{color:#60A5FA}
-.hero-sub{font-size:15px;color:#94A3B8;max-width:420px;margin:0 auto 1rem;line-height:1.7}
-.trust-pills{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:1rem 0 1.75rem}
-.t-pill{display:flex;align-items:center;gap:5px;font-size:11px;color:#94A3B8;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px}
-.t-pill i{font-size:13px;color:#34D399}
-.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:14px;font-weight:600;padding:12px 30px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;letter-spacing:-0.01em}
-.btn-wa:hover{opacity:0.9}
-.btn-wa i{font-size:19px}
-.wa-note{font-size:11px;color:#475569;margin-top:0.6rem}
+.serif{font-family:'Source Serif 4',Georgia,serif}
+.mono{font-family:'IBM Plex Mono',monospace}
 
-.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);background:#0D1426;border-bottom:0.5px solid #1E2D4A}
-.stat-box{padding:1.1rem 0.5rem;text-align:center;border-right:0.5px solid #1E2D4A}
-.stat-box:last-child{border-right:none}
-.stat-box .snum{font-size:20px;font-weight:600;color:#60A5FA;letter-spacing:-0.02em}
-.stat-box .slbl{font-size:10px;color:#64748B;margin-top:3px;line-height:1.4}
+a{color:inherit}
 
-.section{padding:2rem 1.5rem;border-bottom:0.5px solid #1E2D4A;background:#0A0F1E}
-.section.alt{background:#0D1426}
-.sec-label{font-size:10px;font-weight:600;color:#3B82F6;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem}
-.sec-title{font-size:20px;font-weight:600;color:#F1F5F9;margin-bottom:0.4rem;letter-spacing:-0.02em}
-.sec-sub{font-size:13px;color:#64748B;margin-bottom:1.5rem;line-height:1.7}
+/* ===== MASTHEAD ===== */
+.masthead{
+  border-bottom:2px solid var(--ink);
+  background:var(--paper);
+  padding:0 1.25rem;
+}
+.masthead-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0.85rem 0;
+  border-bottom:0.5px solid var(--rule);
+}
+.masthead-date{font-size:10px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase}
+.masthead-status{
+  display:flex;align-items:center;gap:6px;
+  font-size:10px;color:var(--green);letter-spacing:0.06em;text-transform:uppercase;font-weight:600;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
 
-.ib-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
-.ib-stat{background:rgba(26,86,219,0.12);border:0.5px solid rgba(59,130,246,0.25);border-radius:10px;padding:1rem 0.75rem;text-align:center}
-.ib-stat .inum{font-size:20px;font-weight:600;color:#60A5FA;letter-spacing:-0.02em}
-.ib-stat .ilbl{font-size:10px;color:#64748B;margin-top:3px;line-height:1.4}
+.masthead-brand{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 0;
+}
+.brand-name{
+  font-family:'Source Serif 4',serif;
+  font-weight:700;
+  font-size:26px;
+  letter-spacing:-0.01em;
+}
+.brand-tag{
+  font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);
+  margin-top:2px;
+}
+.masthead-reg{
+  text-align:right;
+  font-size:9px;color:var(--ink-faint);letter-spacing:0.04em;line-height:1.6;
+}
 
-.ib-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.ib-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:12px;padding:1rem 1.1rem;transition:border-color 0.2s}
-.ib-card:hover{border-color:#3B82F6}
-.ib-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:0.7rem}
-.ib-card h3{font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:5px}
-.ib-card p{font-size:12px;color:#64748B;line-height:1.5}
+/* ===== TICKER — signature element ===== */
+.ticker-wrap{
+  background:var(--ink);
+  overflow:hidden;
+  border-bottom:0.5px solid var(--rule);
+  position:relative;
+}
+.ticker-track{
+  display:flex;
+  width:max-content;
+  animation:scroll 32s linear infinite;
+}
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.ticker-item{
+  display:flex;align-items:center;gap:8px;
+  padding:0.55rem 1.1rem;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  white-space:nowrap;
+  border-right:0.5px solid rgba(247,245,239,0.12);
+  color:var(--paper);
+}
+.ticker-sym{font-weight:600;color:var(--paper)}
+.ticker-up{color:#7FB89A}
+.ticker-down{color:#D98989}
+@media (prefers-reduced-motion: reduce){
+  .ticker-track{animation:none}
+}
 
-.how-steps{display:flex;flex-direction:column;gap:10px}
-.how-step{display:flex;align-items:flex-start;gap:12px;padding:0.9rem 1rem;background:#111827;border:0.5px solid #1E2D4A;border-radius:10px}
-.how-num{width:28px;height:28px;border-radius:50%;background:#1A56DB;color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.how-step h4{font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:3px}
-.how-step p{font-size:12px;color:#64748B;line-height:1.5}
+/* ===== HERO ===== */
+.hero{
+  padding:2.75rem 1.25rem 2rem;
+  border-bottom:0.5px solid var(--rule);
+}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:8px;
+  font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass);font-weight:600;
+  margin-bottom:1rem;
+}
+.hero-eyebrow::before{content:'';width:18px;height:1px;background:var(--brass)}
+.hero h1{
+  font-family:'Source Serif 4',serif;
+  font-weight:600;
+  font-size:32px;
+  line-height:1.18;
+  letter-spacing:-0.015em;
+  margin-bottom:1rem;
+}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero-dek{
+  font-size:15px;
+  color:var(--ink-soft);
+  line-height:1.65;
+  max-width:480px;
+  margin-bottom:1.5rem;
+  padding-bottom:1.5rem;
+  border-bottom:0.5px solid var(--rule);
+}
+.hero-facts{
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  margin-bottom:1.75rem;
+}
+.hero-fact{
+  padding:0.15rem 0 0.85rem;
+  border-right:0.5px solid var(--rule);
+  padding-right:1rem;
+}
+.hero-fact:nth-child(2n){border-right:none;padding-left:1rem}
+.hero-fact .hf-num{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:600;color:var(--ink)}
+.hero-fact .hf-lbl{font-size:10px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;margin-top:2px}
 
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
-.why-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:10px;padding:0.85rem 1rem;display:flex;align-items:flex-start;gap:10px}
-.why-card i{font-size:18px;color:#60A5FA;margin-top:1px;flex-shrink:0}
-.why-card span{font-size:13px;color:#CBD5E1;line-height:1.4}
+.btn-row{display:flex;flex-direction:column;gap:10px}
+.btn-primary{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:var(--green);color:var(--paper);
+  font-size:14px;font-weight:600;letter-spacing:0.01em;
+  padding:14px 24px;
+  text-decoration:none;
+  border:1px solid var(--green);
+}
+.btn-primary:hover{background:#143728}
+.btn-secondary{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  background:transparent;color:var(--ink);
+  font-size:14px;font-weight:600;
+  padding:13px 24px;
+  text-decoration:none;
+  border:1px solid var(--ink);
+}
+.btn-note{font-size:11px;color:var(--ink-faint);margin-top:0.7rem;text-align:center}
 
-.inr-banner{background:rgba(52,211,153,0.07);border:0.5px solid rgba(52,211,153,0.25);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:14px}
-.inr-icon{width:42px;height:42px;border-radius:10px;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:21px;color:#34D399}
-.inr-text h3{font-size:14px;font-weight:600;color:#34D399;margin-bottom:3px}
-.inr-text p{font-size:12px;color:#64748B;line-height:1.5}
+/* ===== SECTION SCAFFOLD ===== */
+.section{
+  padding:2.25rem 1.25rem;
+  border-bottom:0.5px solid var(--rule);
+}
+.section.shade{background:var(--paper-dim)}
+.sec-head{margin-bottom:1.5rem}
+.sec-no{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;color:var(--brass);letter-spacing:0.05em;
+  margin-bottom:0.5rem;
+}
+.sec-title{
+  font-family:'Source Serif 4',serif;
+  font-weight:600;
+  font-size:22px;
+  letter-spacing:-0.01em;
+  margin-bottom:0.5rem;
+}
+.sec-dek{font-size:13px;color:var(--ink-soft);line-height:1.65;max-width:460px}
 
-.pay-section{padding:2rem 1.5rem;border-bottom:0.5px solid #1E2D4A;background:#0D1426}
-.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
-.pay-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:12px;padding:0.9rem 1rem;display:flex;align-items:center;gap:10px}
-.pay-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.pay-card-text .pay-name{font-size:13px;font-weight:600;color:#E2E8F0}
-.pay-card-text .pay-desc{font-size:11px;color:#64748B;margin-top:2px}
-.pay-badge{display:inline-block;font-size:9px;font-weight:600;padding:2px 6px;border-radius:4px;margin-top:4px;letter-spacing:0.04em}
-.pay-badge.instant{background:rgba(52,211,153,0.15);color:#34D399}
-.pay-badge.fast{background:rgba(96,165,250,0.15);color:#60A5FA}
+/* ===== IB LEDGER ===== */
+.ledger{
+  border-top:1.5px solid var(--ink);
+  border-bottom:1.5px solid var(--ink);
+  margin-bottom:1.5rem;
+}
+.ledger-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:0.8rem 0;
+  border-bottom:0.5px solid var(--rule);
+}
+.ledger-row:last-child{border-bottom:none}
+.ledger-label{font-size:13px;color:var(--ink-soft)}
+.ledger-value{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:17px;font-weight:600;color:var(--green);
+}
 
-.markets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
-.market-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:12px;padding:1rem}
-.market-card:hover{border-color:#3B82F6}
-.mkt-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:0.65rem;font-size:19px}
-.market-card h3{font-size:14px;font-weight:600;color:#E2E8F0;margin-bottom:4px}
-.market-card p{font-size:12px;color:#64748B;line-height:1.4}
+.ib-list{display:flex;flex-direction:column}
+.ib-row{
+  display:flex;gap:14px;
+  padding:1.1rem 0;
+  border-bottom:0.5px solid var(--rule);
+}
+.ib-row:last-child{border-bottom:none}
+.ib-mark{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;color:var(--brass);
+  flex-shrink:0;width:28px;padding-top:2px;
+}
+.ib-row h3{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.ib-row p{font-size:12.5px;color:var(--ink-soft);line-height:1.6}
 
-.steps-row{display:flex;gap:0}
-.step-item{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem 0.75rem;position:relative}
-.step-item:not(:last-child)::after{content:'';position:absolute;right:0;top:18px;width:0.5px;height:36px;background:#1E2D4A}
-.step-num{width:36px;height:36px;border-radius:50%;background:#1A56DB;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:0.6rem}
-.step-item h3{font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:4px}
-.step-item p{font-size:11px;color:#64748B;line-height:1.4}
+/* ===== HOW-TO NUMBERED ===== */
+.steps-list{counter-reset:step}
+.step-row{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:1rem 0;
+  border-bottom:0.5px solid var(--rule);
+}
+.step-row:last-child{border-bottom:none}
+.step-mark{
+  font-family:'Source Serif 4',serif;
+  font-size:24px;font-weight:600;color:var(--rule);
+  flex-shrink:0;width:34px;line-height:1;
+}
+.step-row h4{font-size:14px;font-weight:600;margin-bottom:3px}
+.step-row p{font-size:12.5px;color:var(--ink-soft);line-height:1.6}
 
-.faq-list{display:flex;flex-direction:column;gap:0}
-.faq-q{padding:0.9rem 0;border-bottom:0.5px solid #1E2D4A}
-.faq-q:last-child{border-bottom:none}
-.faq-q h3{font-size:13px;font-weight:600;color:#CBD5E1;margin-bottom:5px;display:flex;align-items:center;gap:7px}
-.faq-q h3 i{font-size:14px;color:#3B82F6;flex-shrink:0}
-.faq-q p{font-size:12px;color:#64748B;line-height:1.6;padding-left:21px}
+/* ===== PAYMENT TABLE ===== */
+.pay-table{width:100%;border-collapse:collapse}
+.pay-table th{
+  text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.06em;
+  color:var(--ink-faint);font-weight:600;
+  padding:0 0 0.6rem;border-bottom:1.5px solid var(--ink);
+}
+.pay-table td{
+  padding:0.85rem 0;border-bottom:0.5px solid var(--rule);
+  font-size:13px;vertical-align:top;
+}
+.pay-table tr:last-child td{border-bottom:none}
+.pay-method{font-weight:600;color:var(--ink)}
+.pay-sub{font-size:11px;color:var(--ink-faint);margin-top:2px}
+.pay-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.02em;
+  padding:2px 7px;
+  display:inline-block;
+}
+.pay-tag.instant{background:var(--green-soft);color:var(--green)}
+.pay-tag.fast{background:var(--brass-soft);color:var(--brass)}
 
-.secure-row{display:flex;align-items:center;justify-content:center;gap:18px;padding:1rem 1.5rem;background:#0D1426;border-bottom:0.5px solid #1E2D4A;flex-wrap:wrap}
-.sec-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#64748B}
-.sec-item i{font-size:15px;color:#3B82F6}
+/* ===== WHY GRID ===== */
+.why-grid{display:flex;flex-direction:column}
+.why-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0.9rem 0;border-bottom:0.5px solid var(--rule);
+  font-size:13.5px;
+}
+.why-row:last-child{border-bottom:none}
+.why-row span:first-child{color:var(--ink)}
+.why-row span:last-child{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);
+}
 
-.cta-wrap{padding:2.5rem 1.5rem;text-align:center;background:#0D1426;border-bottom:0.5px solid #1E2D4A}
-.cta-wrap h2{font-size:22px;font-weight:600;color:#F1F5F9;margin-bottom:0.4rem;letter-spacing:-0.02em}
-.cta-wrap p{font-size:14px;color:#64748B;margin-bottom:1.5rem}
-.cta-btns{display:flex;flex-direction:column;align-items:center;gap:10px}
-.btn-blue{display:inline-flex;align-items:center;gap:8px;background:#1A56DB;color:#fff;font-size:14px;font-weight:600;padding:12px 30px;border-radius:10px;border:none;cursor:pointer;text-decoration:none}
-.btn-blue:hover{opacity:0.9}
+/* ===== MARKETS ===== */
+.markets-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.market-cell{
+  padding:1.1rem 1rem;
+  border-right:0.5px solid var(--rule);
+  border-bottom:0.5px solid var(--rule);
+}
+.market-cell:nth-child(2n){border-right:none}
+.market-cell .mk-eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--brass);margin-bottom:0.4rem;
+}
+.market-cell h3{font-family:'Source Serif 4',serif;font-size:17px;font-weight:600;margin-bottom:4px}
+.market-cell p{font-size:12px;color:var(--ink-soft);line-height:1.5}
 
-.footer{padding:1.25rem 1.5rem;text-align:center;background:#0A0F1E}
-.footer p{font-size:11px;color:#334155;line-height:1.7}
+/* ===== ONBOARDING STRIP ===== */
+.onboard-row{display:flex;flex-direction:column}
+.onboard-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:1rem 0;border-bottom:0.5px solid var(--rule);
+}
+.onboard-item:last-child{border-bottom:none}
+.onboard-num{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--green);
+  border:1px solid var(--green);width:26px;height:26px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.onboard-item h3{font-size:14px;font-weight:600;margin-bottom:3px}
+.onboard-item p{font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+
+/* ===== FAQ ===== */
+.faq-item{padding:1rem 0;border-bottom:0.5px solid var(--rule)}
+.faq-item:last-child{border-bottom:none}
+.faq-item h3{
+  font-family:'Source Serif 4',serif;font-style:italic;
+  font-size:15px;font-weight:600;margin-bottom:6px;
+}
+.faq-item p{font-size:12.5px;color:var(--ink-soft);line-height:1.65}
+
+/* ===== TRUST STRIP ===== */
+.trust-strip{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:0;
+  background:var(--ink);
+}
+.trust-cell{
+  flex:1;min-width:120px;
+  text-align:center;
+  padding:0.9rem 0.5rem;
+  font-size:10px;color:var(--paper);letter-spacing:0.04em;text-transform:uppercase;
+  border-right:0.5px solid rgba(247,245,239,0.15);
+}
+.trust-cell:last-child{border-right:none}
+
+/* ===== CLOSING CTA ===== */
+.cta-final{
+  padding:2.75rem 1.25rem;
+  text-align:center;
+  background:var(--paper-dim);
+  border-bottom:0.5px solid var(--rule);
+}
+.cta-final h2{
+  font-family:'Source Serif 4',serif;font-weight:600;
+  font-size:24px;letter-spacing:-0.01em;margin-bottom:0.6rem;
+}
+.cta-final p{font-size:13.5px;color:var(--ink-soft);margin-bottom:1.5rem}
+.cta-btns{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto}
+
+/* ===== FOOTER ===== */
+.footer{padding:1.5rem 1.25rem;background:var(--paper)}
+.footer p{font-size:10.5px;color:var(--ink-faint);line-height:1.75}
+.footer .legal-name{color:var(--ink-soft);font-weight:600}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 </style>
-
-
-
+</head>
+<body>
 <div class="page">
 
-<div class="nav">
-  <div class="nav-logo">
-    <div class="logo-mark"><i class="ti ti-chart-candlestick" aria-hidden="true"></i></div>
-    <span class="logo-text">Best Forex Broker</span>
-  </div>
-  <div class="nav-badge"><i class="ti ti-shield-check" aria-hidden="true"></i> Regulated &amp; Secure</div>
-</div>
-
-<div class="hero">
-  <div class="hero-tag"><i class="ti ti-globe" aria-hidden="true"></i> Trusted Global Trading Platform</div>
-  <h1>Your trusted partner<br>in <span class="accent">global trading</span></h1>
-  <p class="hero-sub">Access Forex, Commodities, Indices &amp; Crypto — with full INR support and instant UPI deposits for Indian traders.</p>
-  <div class="trust-pills">
-    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> Regulated Broker</div>
-    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> INR Deposits &amp; Withdrawals</div>
-    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> UPI &amp; Crypto Supported</div>
-    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> 24/7 Support</div>
-  </div>
-  <a class="btn-wa" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank">
-    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Open account on WhatsApp
-  </a>
-  <p class="wa-note">Tap to chat directly — no forms, no wait</p>
-</div>
-
-<div class="stats-bar">
-  <div class="stat-box"><div class="snum">10,000+</div><div class="slbl">Active traders</div></div>
-  <div class="stat-box"><div class="snum">50+</div><div class="slbl">Instruments</div></div>
-  <div class="stat-box"><div class="snum">Instant</div><div class="slbl">UPI deposits</div></div>
-  <div class="stat-box"><div class="snum">1–3 days</div><div class="slbl">INR withdrawals</div></div>
-</div>
-
-<div class="section alt">
-  <div class="sec-label">Introducing Broker Program</div>
-  <div class="sec-title">Become an IB — earn on every trade</div>
-  <div class="sec-sub">Refer clients and earn lifetime commissions on every trade they place. No cap, no limits, daily payouts in INR.</div>
-
-  <div class="ib-stat-row">
-    <div class="ib-stat"><div class="inum">Up to 60%</div><div class="ilbl">Revenue share</div></div>
-    <div class="ib-stat"><div class="inum">Daily</div><div class="ilbl">Commission payouts</div></div>
-    <div class="ib-stat"><div class="inum">Lifetime</div><div class="ilbl">Earnings per referral</div></div>
-  </div>
-
-  <div class="ib-grid">
-    <div class="ib-card">
-      <div class="ib-icon" style="background:rgba(96,165,250,0.12)"><i class="ti ti-cash" style="color:#60A5FA" aria-hidden="true"></i></div>
-      <h3>High commission</h3>
-      <p>Generous rebates on every trade by your referred clients — for life.</p>
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="masthead-date" id="liveDate">MARKETS OPEN — MON, JUN 22</span>
+      <span class="masthead-status"><span class="dot"></span> Live Pricing</span>
     </div>
-    <div class="ib-card">
-      <div class="ib-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-calendar-stats" style="color:#34D399" aria-hidden="true"></i></div>
-      <h3>Daily payouts</h3>
-      <p>Commissions credited daily — no waiting, no delays.</p>
-    </div>
-    <div class="ib-card">
-      <div class="ib-icon" style="background:rgba(96,165,250,0.12)"><i class="ti ti-users" style="color:#60A5FA" aria-hidden="true"></i></div>
-      <h3>Unlimited referrals</h3>
-      <p>More clients = more earnings. No referral cap ever.</p>
-    </div>
-    <div class="ib-card">
-      <div class="ib-icon" style="background:rgba(251,191,36,0.1)"><i class="ti ti-chart-line" style="color:#FCD34D" aria-hidden="true"></i></div>
-      <h3>Live dashboard</h3>
-      <p>Track clients, trades &amp; earnings in real time from your IB portal.</p>
-    </div>
-    <div class="ib-card">
-      <div class="ib-icon" style="background:rgba(167,139,250,0.1)"><i class="ti ti-gift" style="color:#A78BFA" aria-hidden="true"></i></div>
-      <h3>Marketing support</h3>
-      <p>Banners, landing pages &amp; creatives — all provided free.</p>
-    </div>
-    <div class="ib-card">
-      <div class="ib-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-currency-rupee" style="color:#34D399" aria-hidden="true"></i></div>
-      <h3>INR withdrawals</h3>
-      <p>Withdraw IB earnings directly in INR via UPI or bank transfer.</p>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="sec-label">How to become an IB</div>
-  <div class="how-steps">
-    <div class="how-step">
-      <div class="how-num">1</div>
+    <div class="masthead-brand">
       <div>
-        <h4>Contact us on WhatsApp</h4>
-        <p>Reach out directly — our IB team will set you up fast, no paperwork hassle.</p>
+        <div class="brand-name">Meridian &amp; Co.</div>
+        <div class="brand-tag">Forex · Commodities · Indices · Crypto</div>
+      </div>
+      <div class="masthead-reg">Regulated Broker<br>INR Settlement Desk</div>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="tickerTrack">
+      <div class="ticker-item"><span class="ticker-sym">XAUUSD</span><span>3,378.20</span><span class="ticker-up">▲ 0.62%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">EURUSD</span><span>1.0842</span><span class="ticker-down">▼ 0.11%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">NIFTY 50</span><span>24,812</span><span class="ticker-up">▲ 0.38%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">BANKNIFTY</span><span>52,104</span><span class="ticker-up">▲ 0.54%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">BTCUSD</span><span>67,420</span><span class="ticker-down">▼ 0.27%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">USDINR</span><span>83.41</span><span class="ticker-up">▲ 0.05%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">WTI CRUDE</span><span>78.92</span><span class="ticker-down">▼ 0.44%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">GBPUSD</span><span>1.2715</span><span class="ticker-up">▲ 0.09%</span></div>
+      <!-- duplicate set for seamless loop -->
+      <div class="ticker-item"><span class="ticker-sym">XAUUSD</span><span>3,378.20</span><span class="ticker-up">▲ 0.62%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">EURUSD</span><span>1.0842</span><span class="ticker-down">▼ 0.11%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">NIFTY 50</span><span>24,812</span><span class="ticker-up">▲ 0.38%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">BANKNIFTY</span><span>52,104</span><span class="ticker-up">▲ 0.54%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">BTCUSD</span><span>67,420</span><span class="ticker-down">▼ 0.27%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">USDINR</span><span>83.41</span><span class="ticker-up">▲ 0.05%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">WTI CRUDE</span><span>78.92</span><span class="ticker-down">▼ 0.44%</span></div>
+      <div class="ticker-item"><span class="ticker-sym">GBPUSD</span><span>1.2715</span><span class="ticker-up">▲ 0.09%</span></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">Account Opening · 10 Minutes</div>
+    <h1>One account.<br>Every market. <em>Settled in rupees.</em></h1>
+    <p class="hero-dek">Trade Forex, Commodities, Indices and Crypto from a single regulated account — fund and withdraw directly in INR, no conversion, no detours.</p>
+
+    <div class="hero-facts">
+      <div class="hero-fact"><div class="hf-num">50+</div><div class="hf-lbl">Tradable instruments</div></div>
+      <div class="hero-fact"><div class="hf-num">10,000+</div><div class="hf-lbl">Active traders</div></div>
+      <div class="hero-fact"><div class="hf-num">Instant</div><div class="hf-lbl">UPI deposits</div></div>
+      <div class="hero-fact"><div class="hf-num">1–3 days</div><div class="hf-lbl">INR withdrawals</div></div>
+    </div>
+
+    <div class="btn-row">
+      <a class="btn-primary" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank" rel="noopener">Open an account on WhatsApp →</a>
+      <a class="btn-secondary" href="#ib">Read about the IB programme</a>
+    </div>
+    <p class="btn-note">No forms. No waiting room. A specialist replies in minutes.</p>
+  </section>
+
+  <!-- IB PROGRAMME -->
+  <section class="section shade" id="ib">
+    <div class="sec-head">
+      <div class="sec-no">01 — Partner Programme</div>
+      <h2 class="sec-title">Become an Introducing Broker</h2>
+      <p class="sec-dek">Refer traders once. Earn on their volume for as long as they trade — paid out daily, settled in INR.</p>
+    </div>
+
+    <div class="ledger">
+      <div class="ledger-row"><span class="ledger-label">Revenue share</span><span class="ledger-value">Up to 60%</span></div>
+      <div class="ledger-row"><span class="ledger-label">Commission payout</span><span class="ledger-value">Daily</span></div>
+      <div class="ledger-row"><span class="ledger-label">Referral cap</span><span class="ledger-value">None</span></div>
+      <div class="ledger-row"><span class="ledger-label">Earnings window</span><span class="ledger-value">Lifetime</span></div>
+    </div>
+
+    <div class="ib-list">
+      <div class="ib-row">
+        <div class="ib-mark">A</div>
+        <div><h3>Rebate on every trade</h3><p>A share of the spread on each position your referred clients open — for as long as they remain active, not just their first trade.</p></div>
+      </div>
+      <div class="ib-row">
+        <div class="ib-mark">B</div>
+        <div><h3>Daily settlement</h3><p>Commissions post to your IB ledger every day. No monthly cycles, no manual claims.</p></div>
+      </div>
+      <div class="ib-row">
+        <div class="ib-mark">C</div>
+        <div><h3>No ceiling on referrals</h3><p>Bring one client or one thousand — the structure and the percentage stay the same.</p></div>
+      </div>
+      <div class="ib-row">
+        <div class="ib-mark">D</div>
+        <div><h3>A live partner dashboard</h3><p>Track referred accounts, trade volume, and accrued commission in real time.</p></div>
+      </div>
+      <div class="ib-row">
+        <div class="ib-mark">E</div>
+        <div><h3>Creative &amp; landing support</h3><p>Banners, copy, and ready-made pages provided at no cost to help you bring in clients.</p></div>
+      </div>
+      <div class="ib-row">
+        <div class="ib-mark">F</div>
+        <div><h3>Withdraw straight to INR</h3><p>Pull earnings out via UPI or bank transfer — no intermediate currency step.</p></div>
       </div>
     </div>
-    <div class="how-step">
-      <div class="how-num">2</div>
-      <div>
-        <h4>Get your unique referral link</h4>
-        <p>Receive a personal IB link to share with your clients and network.</p>
-      </div>
+  </section>
+
+  <!-- HOW TO BECOME IB -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="sec-no">02 — Onboarding, Partner Track</div>
+      <h2 class="sec-title">Four steps to your first payout</h2>
     </div>
-    <div class="how-step">
-      <div class="how-num">3</div>
-      <div>
-        <h4>Refer clients</h4>
-        <p>As soon as your referred clients start trading, your commissions begin instantly.</p>
-      </div>
+    <div class="steps-list">
+      <div class="step-row"><div class="step-mark">1</div><div><h4>Message us on WhatsApp</h4><p>Tell our partner desk you'd like to join as an IB — no application form required.</p></div></div>
+      <div class="step-row"><div class="step-mark">2</div><div><h4>Receive your referral link</h4><p>A unique tracking link is issued to your account within the same conversation.</p></div></div>
+      <div class="step-row"><div class="step-mark">3</div><div><h4>Share it with your network</h4><p>Every client who signs up and trades through your link is attributed to you permanently.</p></div></div>
+      <div class="step-row"><div class="step-mark">4</div><div><h4>Earn from day one</h4><p>Commission begins accruing on your referrals' first trade and pays out daily in INR.</p></div></div>
     </div>
-    <div class="how-step">
-      <div class="how-num">4</div>
-      <div>
-        <h4>Earn daily — withdraw in INR</h4>
-        <p>Rebates hit your account every day. Withdraw via UPI anytime.</p>
-      </div>
+  </section>
+
+  <!-- PAYMENTS -->
+  <section class="section shade">
+    <div class="sec-head">
+      <div class="sec-no">03 — Funding</div>
+      <h2 class="sec-title">Deposit and withdraw your way</h2>
+      <p class="sec-dek">Every method below settles in Indian Rupees. No currency conversion, no hidden spread on transfer.</p>
     </div>
+    <table class="pay-table">
+      <thead><tr><th>Method</th><th>Processing</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><div class="pay-method">UPI</div><div class="pay-sub">GPay · PhonePe · Paytm</div></td>
+          <td><span class="pay-tag instant">Instant</span></td>
+        </tr>
+        <tr>
+          <td><div class="pay-method">Crypto</div><div class="pay-sub">USDT · BTC · ETH</div></td>
+          <td><span class="pay-tag instant">Instant</span></td>
+        </tr>
+        <tr>
+          <td><div class="pay-method">IMPS / NEFT / RTGS</div><div class="pay-sub">Direct bank transfer</div></td>
+          <td><span class="pay-tag fast">1–2 days</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- WHY -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="sec-no">04 — The Account</div>
+      <h2 class="sec-title">What you're trading with</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-row"><span>Account opening</span><span>Same day</span></div>
+      <div class="why-row"><span>Trading conditions</span><span>Competitive spreads</span></div>
+      <div class="why-row"><span>Settlement currency</span><span>INR, native</span></div>
+      <div class="why-row"><span>Platform tools</span><span>Advanced charting</span></div>
+      <div class="why-row"><span>Support desk</span><span>24 / 7</span></div>
+      <div class="why-row"><span>Client funds</span><span>Segregated</span></div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="section shade">
+    <div class="sec-head">
+      <div class="sec-no">05 — Instruments</div>
+      <h2 class="sec-title">Four markets, one ledger</h2>
+    </div>
+    <div class="markets-grid">
+      <div class="market-cell"><div class="mk-eyebrow">FX</div><h3>Forex</h3><p>Majors, minors &amp; exotic currency pairs</p></div>
+      <div class="market-cell"><div class="mk-eyebrow">XAU / WTI</div><h3>Commodities</h3><p>Gold, silver, crude oil &amp; more</p></div>
+      <div class="market-cell"><div class="mk-eyebrow">NSE / Global</div><h3>Indices</h3><p>Domestic and global indices, one account</p></div>
+      <div class="market-cell"><div class="mk-eyebrow">BTC / ETH</div><h3>Crypto</h3><p>Major digital assets, spot exposure</p></div>
+    </div>
+  </section>
+
+  <!-- ONBOARDING TRADER -->
+  <section class="section">
+    <div class="sec-head">
+      <div class="sec-no">06 — Onboarding, Trader Track</div>
+      <h2 class="sec-title">Three steps to your first trade</h2>
+    </div>
+    <div class="onboard-row">
+      <div class="onboard-item"><div class="onboard-num">1</div><div><h3>Register</div><p>Open your account on WhatsApp in a few minutes.</p></div></div>
+      <div class="onboard-item"><div class="onboard-num">2</div><div><h3>Verify</div><p>Complete KYC — quick, secure, fully digital.</p></div></div>
+      <div class="onboard-item"><div class="onboard-num">3</div><div><h3>Fund &amp; trade</h3><p>Deposit via UPI or crypto and go live the same day.</p></div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section shade">
+    <div class="sec-head">
+      <div class="sec-no">07 — Questions</div>
+      <h2 class="sec-title">Before you write in</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item"><h3>How do I join the IB programme?</h3><p>Message the partner desk on WhatsApp. A specialist activates your IB account and issues your referral link in the same conversation.</p></div>
+      <div class="faq-item"><h3>How much does an IB earn?</h3><p>Up to 60% revenue share on your referred clients' trading volume, with no cap on the number of clients you bring in.</p></div>
+      <div class="faq-item"><h3>Can I fund my account with UPI or crypto?</h3><p>Yes. Both are processed instantly — UPI through GPay, PhonePe or Paytm, and crypto through USDT, BTC or ETH.</p></div>
+      <div class="faq-item"><h3>Can I withdraw directly in INR?</h3><p>Yes, via UPI, net banking, IMPS/NEFT/RTGS, or debit and credit cards — no conversion step.</p></div>
+      <div class="faq-item"><h3>How long do withdrawals take?</h3><p>UPI and crypto withdrawals clear quickly. Bank transfers settle within one to three business days.</p></div>
+      <div class="faq-item"><h3>Are my funds and data secure?</h3><p>Client funds are held in segregated accounts, and the platform runs on industry-standard SSL encryption throughout.</p></div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-cell">SSL Encrypted</div>
+    <div class="trust-cell">Regulated Broker</div>
+    <div class="trust-cell">Segregated Funds</div>
+    <div class="trust-cell">Data Protected</div>
   </div>
-</div>
 
-<div class="pay-section">
-  <div class="sec-label">Payment methods</div>
-  <div class="sec-title">Deposit &amp; withdraw your way</div>
-  <div class="sec-sub">Multiple fast &amp; secure options — all supporting INR.</div>
-  <div class="pay-grid">
-    <div class="pay-card">
-      <div class="pay-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-currency-rupee" style="color:#34D399" aria-hidden="true"></i></div>
-      <div class="pay-card-text">
-        <div class="pay-name">UPI</div>
-        <div class="pay-desc">GPay, PhonePe, Paytm</div>
-        <div class="pay-badge instant">Instant</div>
-      </div>
+  <!-- FINAL CTA -->
+  <section class="cta-final">
+    <h2 class="serif">Ready to open your ledger?</h2>
+    <p>Trade across four markets, or earn from those who do — both start with one message.</p>
+    <div class="cta-btns">
+      <a class="btn-primary" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank" rel="noopener">Start trading now</a>
+      <a class="btn-secondary" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank" rel="noopener">Apply as an IB partner</a>
     </div>
-    <div class="pay-card">
-      <div class="pay-icon" style="background:rgba(167,139,250,0.1)"><i class="ti ti-currency-bitcoin" style="color:#A78BFA" aria-hidden="true"></i></div>
-      <div class="pay-card-text">
-        <div class="pay-name">Crypto</div>
-        <div class="pay-desc">USDT, BTC, ETH</div>
-        <div class="pay-badge instant">Instant</div>
-      </div>
-    </div>
-   
-    
-    <div class="pay-card">
-      <div class="pay-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-transfer" style="color:#34D399" aria-hidden="true"></i></div>
-      <div class="pay-card-text">
-        <div class="pay-name">IMPS / NEFT / RTGS</div>
-        <div class="pay-desc">Direct bank transfer</div>
-        <div class="pay-badge fast">1–2 days</div>
-      </div>
-    </div>
-    
-  </div>
-</div>
+  </section>
 
-<div class="section alt">
-  <div class="sec-label">Why choose us</div>
-  <div class="inr-banner">
-    <div class="inr-icon"><i class="ti ti-currency-rupee" aria-hidden="true"></i></div>
-    <div class="inr-text">
-      <h3>100% INR deposit &amp; withdrawal support</h3>
-      <p>No currency conversion. Fund and receive payouts directly in Indian Rupees — via UPI, bank, or crypto.</p>
-    </div>
-  </div>
-  <div class="why-grid">
-    <div class="why-card"><i class="ti ti-bolt" aria-hidden="true"></i><span>Fast account opening</span></div>
-    <div class="why-card"><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i><span>Competitive trading conditions</span></div>
-    <div class="why-card"><i class="ti ti-wallet" aria-hidden="true"></i><span>Multiple payment methods</span></div>
-    <div class="why-card"><i class="ti ti-chart-candlestick" aria-hidden="true"></i><span>Advanced trading tools</span></div>
-    <div class="why-card"><i class="ti ti-headset" aria-hidden="true"></i><span>24/7 customer support</span></div>
-    <div class="why-card"><i class="ti ti-shield-check" aria-hidden="true"></i><span>Secure &amp; regulated</span></div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="sec-label">Popular markets</div>
-  <div class="markets-grid">
-    <div class="market-card">
-      <div class="mkt-icon" style="background:rgba(96,165,250,0.1)"><i class="ti ti-currency-dollar" style="color:#60A5FA" aria-hidden="true"></i></div>
-      <h3>Forex</h3>
-      <p>Major, minor &amp; exotic currency pairs</p>
-    </div>
-    <div class="market-card">
-      <div class="mkt-icon" style="background:rgba(251,191,36,0.1)"><i class="ti ti-coin" style="color:#FCD34D" aria-hidden="true"></i></div>
-      <h3>Commodities</h3>
-      <p>Gold, Silver, Oil &amp; more</p>
-    </div>
-    <div class="market-card">
-      <div class="mkt-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-chart-bar" style="color:#34D399" aria-hidden="true"></i></div>
-      <h3>Indices</h3>
-      <p>Global indices from one account</p>
-    </div>
-    <div class="market-card">
-      <div class="mkt-icon" style="background:rgba(167,139,250,0.1)"><i class="ti ti-currency-bitcoin" style="color:#A78BFA" aria-hidden="true"></i></div>
-      <h3>Crypto</h3>
-      <p>BTC, ETH &amp; digital assets</p>
-    </div>
-  </div>
-</div>
-
-<div class="section alt">
-  <div class="sec-label">Get started</div>
-  <div class="sec-title">3 simple steps to start trading</div>
-  <div class="steps-row">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <h3>Register</h3>
-      <p>Open account via WhatsApp in minutes</p>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <h3>Verify</h3>
-      <p>Complete KYC quickly &amp; securely</p>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <h3>Trade</h3>
-      <p>Deposit in INR or crypto &amp; go live</p>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <div class="sec-label">Frequently asked questions</div>
-  <div class="faq-list">
-    <div class="faq-q">
-      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>How do I join the IB program?</h3>
-      <p>Contact us on WhatsApp — our team will guide you step by step and activate your IB account fast.</p>
-    </div>
-    <div class="faq-q">
-      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>How much commission does an IB earn?</h3>
-      <p>Up to 60% revenue share based on your referred clients' trading volume — with no cap on referrals.</p>
-    </div>
-    <div class="faq-q">
-      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>Can I deposit using UPI or crypto?</h3>
-      <p>Yes — both UPI (GPay, PhonePe, Paytm) and crypto (USDT, BTC, ETH) deposits are available with instant processing.</p>
-    </div>
-    <div class="faq-q">
-      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>Can I deposit and withdraw in INR?</h3>
-      <p>Yes — full INR support via UPI, net banking, IMPS/NEFT/RTGS, and debit/credit cards.</p>
-    </div>
-    <div class="faq-q">
-      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>How long do withdrawals take?</h3>
-      <p>UPI and crypto withdrawals are processed quickly. Bank withdrawals complete within 1–3 business days.</p>
-    </div>
-    <div class="faq-q">
-      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>Are my funds and data safe?</h3>
-      <p>We use industry-standard SSL encryption and maintain segregated client accounts for full fund security.</p>
-    </div>
-  </div>
-</div>
-
-<div class="secure-row">
-  <div class="sec-item"><i class="ti ti-lock" aria-hidden="true"></i> SSL encrypted</div>
-  <div class="sec-item"><i class="ti ti-shield-check" aria-hidden="true"></i> Regulated broker</div>
-  <div class="sec-item"><i class="ti ti-building-bank" aria-hidden="true"></i> Segregated client funds</div>
-  <div class="sec-item"><i class="ti ti-eye-off" aria-hidden="true"></i> Data privacy protected</div>
-</div>
-
-<div class="cta-wrap">
-  <h2>Ready to grow your income?</h2>
-  <p>Join as a trader or IB partner — full INR &amp; crypto support available.</p>
-  <div class="cta-btns">
-    <a class="btn-wa" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank">
-      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Start trading now
-    </a>
-    <a class="btn-blue" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank">
-      <i class="ti ti-users" aria-hidden="true"></i> Apply as an IB partner
-    </a>
-  </div>
-  <p class="wa-note" style="margin-top:0.75rem">Both buttons connect you directly via WhatsApp</p>
-</div>
-
-<div class="footer">
-  <p><strong style="color:#334155">Risk warning:</strong> Trading leveraged financial instruments carries significant risk and may not be suitable for all investors. You may lose some or all of your invested capital. Please ensure you fully understand the risks before trading.<br><br>© [Year] [Broker Name]. All Rights Reserved.</p>
-</div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p><span class="legal-name">Risk warning:</span> Trading leveraged financial instruments carries significant risk and may not be suitable for all investors. You may lose some or all of your invested capital. Please ensure you fully understand the risks before trading.<br><br>
+    © <span id="yr"></span> Meridian &amp; Co. All rights reserved.</p>
+  </footer>
 
 </div>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
