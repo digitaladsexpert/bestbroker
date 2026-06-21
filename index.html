@@ -1,262 +1,406 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Premium modern website for a neurologist highlighting expertise, services, patient care, and appointment booking."
-    />
-    <title>Dr. Arjun Mehta | Consultant Neurologist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="Dr. Arjun Mehta home">
-        <span class="brand-mark">AM</span>
-        <span>
-          <strong>Dr. Arjun Mehta</strong>
-          <small>Consultant Neurologist</small>
-        </span>
-      </a>
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="#expertise">Expertise</a>
-        <a href="#care">Care</a>
-        <a href="#doctor">Doctor</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <a class="header-action" href="#contact">Book Visit</a>
-    </header>
 
-    <main>
-      <section class="hero" id="home" aria-label="Neurologist profile">
-        <img src="assets/neurology-hero.png" alt="Neurologist consulting a patient in a modern clinic" />
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-          <p class="eyebrow">Advanced neurological care</p>
-          <h1>Precision diagnosis. Calm guidance. Better brain health.</h1>
-          <p class="hero-copy">
-            A premium neurology practice for patients seeking expert care for stroke, epilepsy,
-            migraine, movement disorders, neuropathy, memory concerns, and complex neurological symptoms.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">Schedule Consultation</a>
-            <a class="btn secondary" href="#expertise">View Expertise</a>
-          </div>
-        </div>
-      </section>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.page{font-family:'Inter',var(--font-sans);background:#0A0F1E;color:#E8EDF5}
 
-      <section class="trust-band" aria-label="Practice highlights">
-        <div>
-          <strong>18+</strong>
-          <span>Years clinical experience</span>
-        </div>
-        <div>
-          <strong>12k+</strong>
-          <span>Patients evaluated</span>
-        </div>
-        <div>
-          <strong>24 hr</strong>
-          <span>Stroke response guidance</span>
-        </div>
-        <div>
-          <strong>4.9</strong>
-          <span>Patient satisfaction rating</span>
-        </div>
-      </section>
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:#0D1426;border-bottom:0.5px solid #1E2D4A}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:34px;height:34px;background:#1A56DB;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-mark i{font-size:18px;color:#fff}
+.logo-text{font-size:16px;font-weight:600;color:#fff;letter-spacing:-0.01em}
+.nav-badge{display:flex;align-items:center;gap:5px;font-size:11px;font-weight:500;color:#34D399;background:rgba(52,211,153,0.1);border:0.5px solid rgba(52,211,153,0.3);padding:5px 12px;border-radius:20px}
+.nav-badge i{font-size:13px}
 
-      <section class="section intro" id="expertise">
-        <div class="section-heading">
-          <p class="eyebrow">Expertise</p>
-          <h2>Neurological care with clarity, depth, and discretion.</h2>
-        </div>
-        <div class="intro-copy">
-          <p>
-            Dr. Mehta combines detailed clinical evaluation, evidence-based treatment planning,
-            and advanced neurodiagnostics to help patients understand what is happening and what
-            to do next.
-          </p>
-        </div>
-      </section>
+.hero{padding:3rem 1.5rem 2.5rem;text-align:center;background:#0D1426;border-bottom:0.5px solid #1E2D4A;position:relative}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:#93C5FD;background:rgba(59,130,246,0.12);border:0.5px solid rgba(59,130,246,0.3);padding:5px 14px;border-radius:20px;margin-bottom:1.25rem;letter-spacing:0.04em}
+.hero h1{font-size:30px;font-weight:600;color:#fff;line-height:1.25;margin-bottom:0.75rem;letter-spacing:-0.02em}
+.hero h1 .accent{color:#60A5FA}
+.hero-sub{font-size:15px;color:#94A3B8;max-width:420px;margin:0 auto 1rem;line-height:1.7}
+.trust-pills{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:1rem 0 1.75rem}
+.t-pill{display:flex;align-items:center;gap:5px;font-size:11px;color:#94A3B8;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);padding:5px 12px;border-radius:20px}
+.t-pill i{font-size:13px;color:#34D399}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:14px;font-weight:600;padding:12px 30px;border-radius:10px;border:none;cursor:pointer;text-decoration:none;letter-spacing:-0.01em}
+.btn-wa:hover{opacity:0.9}
+.btn-wa i{font-size:19px}
+.wa-note{font-size:11px;color:#475569;margin-top:0.6rem}
 
-      <section class="expertise-grid" aria-label="Neurology expertise areas">
-        <article>
-          <span class="icon">01</span>
-          <h3>Stroke & TIA</h3>
-          <p>Rapid evaluation, prevention strategy, risk-factor control, and recovery planning after stroke or transient ischemic attack.</p>
-        </article>
-        <article>
-          <span class="icon">02</span>
-          <h3>Epilepsy & Seizures</h3>
-          <p>Diagnosis, EEG review, medication optimization, lifestyle counseling, and long-term seizure management.</p>
-        </article>
-        <article>
-          <span class="icon">03</span>
-          <h3>Migraine & Headache</h3>
-          <p>Personalized treatment for migraine, cluster headache, tension headache, medication overuse, and facial pain syndromes.</p>
-        </article>
-        <article>
-          <span class="icon">04</span>
-          <h3>Parkinson's & Movement</h3>
-          <p>Care for tremor, Parkinson's disease, dystonia, gait disorders, and medication-related movement changes.</p>
-        </article>
-        <article>
-          <span class="icon">05</span>
-          <h3>Memory & Cognitive Care</h3>
-          <p>Assessment for memory loss, dementia, cognitive decline, sleep-related confusion, and reversible neurological causes.</p>
-        </article>
-        <article>
-          <span class="icon">06</span>
-          <h3>Nerve & Muscle Disorders</h3>
-          <p>Evaluation of neuropathy, numbness, weakness, radiculopathy, myopathy, and neuromuscular conditions.</p>
-        </article>
-      </section>
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);background:#0D1426;border-bottom:0.5px solid #1E2D4A}
+.stat-box{padding:1.1rem 0.5rem;text-align:center;border-right:0.5px solid #1E2D4A}
+.stat-box:last-child{border-right:none}
+.stat-box .snum{font-size:20px;font-weight:600;color:#60A5FA;letter-spacing:-0.02em}
+.stat-box .slbl{font-size:10px;color:#64748B;margin-top:3px;line-height:1.4}
 
-      <section class="section split" id="care">
-        <div class="feature-panel">
-          <p class="eyebrow">Patient journey</p>
-          <h2>Every visit is structured around answers.</h2>
-          <p>
-            From the first consultation to follow-up care, the process is designed to reduce uncertainty,
-            explain options clearly, and build a treatment plan that fits the patient's life.
-          </p>
-          <ul class="check-list">
-            <li>Detailed neurological examination and symptom timeline</li>
-            <li>Review of MRI, CT, EEG, EMG, and laboratory reports</li>
-            <li>Medication planning with prevention and safety counseling</li>
-            <li>Coordinated referrals for rehabilitation or specialty procedures</li>
-          </ul>
-        </div>
-        <div class="care-stack" aria-label="Services">
-          <div>
-            <span>Consultation</span>
-            <strong>Comprehensive neuro evaluation</strong>
-          </div>
-          <div>
-            <span>Diagnostics</span>
-            <strong>EEG, EMG/NCS, neuroimaging review</strong>
-          </div>
-          <div>
-            <span>Treatment</span>
-            <strong>Modern medication and prevention plans</strong>
-          </div>
-          <div>
-            <span>Continuity</span>
-            <strong>Follow-up, monitoring, and family education</strong>
-          </div>
-        </div>
-      </section>
+.section{padding:2rem 1.5rem;border-bottom:0.5px solid #1E2D4A;background:#0A0F1E}
+.section.alt{background:#0D1426}
+.sec-label{font-size:10px;font-weight:600;color:#3B82F6;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem}
+.sec-title{font-size:20px;font-weight:600;color:#F1F5F9;margin-bottom:0.4rem;letter-spacing:-0.02em}
+.sec-sub{font-size:13px;color:#64748B;margin-bottom:1.5rem;line-height:1.7}
 
-      <section class="doctor-section" id="doctor">
-        <div class="doctor-bio">
-          <p class="eyebrow">About the neurologist</p>
-          <h2>Dr. Arjun Mehta, MD, DM Neurology</h2>
-          <p>
-            A board-certified consultant neurologist known for careful diagnosis, warm communication,
-            and treatment plans that balance medical precision with patient comfort.
-          </p>
-          <div class="credentials">
-            <span>MD Internal Medicine</span>
-            <span>DM Neurology</span>
-            <span>Fellowship in Stroke Medicine</span>
-            <span>Member, Indian Academy of Neurology</span>
-          </div>
-        </div>
-        <aside class="quote-card">
-          <p>
-            "The best neurology care begins with listening closely. Symptoms often tell a story
-            before the scan does."
-          </p>
-          <span>Dr. Arjun Mehta</span>
-        </aside>
-      </section>
+.ib-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
+.ib-stat{background:rgba(26,86,219,0.12);border:0.5px solid rgba(59,130,246,0.25);border-radius:10px;padding:1rem 0.75rem;text-align:center}
+.ib-stat .inum{font-size:20px;font-weight:600;color:#60A5FA;letter-spacing:-0.02em}
+.ib-stat .ilbl{font-size:10px;color:#64748B;margin-top:3px;line-height:1.4}
 
-      <section class="section testimonials" aria-label="Patient testimonials">
-        <div class="section-heading">
-          <p class="eyebrow">Patient experience</p>
-          <h2>Trusted for calm, thorough, and respectful care.</h2>
-        </div>
-        <div class="testimonial-grid">
-          <article>
-            <p>"The consultation was detailed and reassuring. My migraine plan finally made sense."</p>
-            <span>Patient with chronic migraine</span>
-          </article>
-          <article>
-            <p>"He explained the stroke risk clearly and helped our family understand every next step."</p>
-            <span>Family consultation</span>
-          </article>
-          <article>
-            <p>"Professional, patient, and extremely thorough with my father's memory assessment."</p>
-            <span>Caregiver feedback</span>
-          </article>
-        </div>
-      </section>
+.ib-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.ib-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:12px;padding:1rem 1.1rem;transition:border-color 0.2s}
+.ib-card:hover{border-color:#3B82F6}
+.ib-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:0.7rem}
+.ib-card h3{font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:5px}
+.ib-card p{font-size:12px;color:#64748B;line-height:1.5}
 
-      <section class="contact-section" id="contact">
-        <div>
-          <p class="eyebrow">Appointments</p>
-          <h2>Book a consultation with the neurology clinic.</h2>
-          <p>
-            Share your symptoms, reports, and preferred visit time. The clinic team will confirm
-            availability and guide you on what to bring.
-          </p>
-        </div>
-        <form class="contact-form" aria-label="Appointment request form">
-          <label>
-            Full name
-            <input type="text" name="name" placeholder="Your name" />
-          </label>
-          <label>
-            Phone number
-            <input type="tel" name="phone" placeholder="+91 98765 43210" />
-          </label>
-          <label>
-            Main concern
-            <select name="concern">
-              <option>Migraine or headache</option>
-              <option>Stroke or TIA</option>
-              <option>Seizure or epilepsy</option>
-              <option>Memory concern</option>
-              <option>Numbness or weakness</option>
-              <option>Other neurological symptom</option>
-            </select>
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="4" placeholder="Briefly describe your symptoms"></textarea>
-          </label>
-          <button type="submit">Request Appointment</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </section>
-    </main>
+.how-steps{display:flex;flex-direction:column;gap:10px}
+.how-step{display:flex;align-items:flex-start;gap:12px;padding:0.9rem 1rem;background:#111827;border:0.5px solid #1E2D4A;border-radius:10px}
+.how-num{width:28px;height:28px;border-radius:50%;background:#1A56DB;color:#fff;font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.how-step h4{font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:3px}
+.how-step p{font-size:12px;color:#64748B;line-height:1.5}
 
-    <footer class="site-footer">
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.why-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:10px;padding:0.85rem 1rem;display:flex;align-items:flex-start;gap:10px}
+.why-card i{font-size:18px;color:#60A5FA;margin-top:1px;flex-shrink:0}
+.why-card span{font-size:13px;color:#CBD5E1;line-height:1.4}
+
+.inr-banner{background:rgba(52,211,153,0.07);border:0.5px solid rgba(52,211,153,0.25);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:14px}
+.inr-icon{width:42px;height:42px;border-radius:10px;background:rgba(52,211,153,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:21px;color:#34D399}
+.inr-text h3{font-size:14px;font-weight:600;color:#34D399;margin-bottom:3px}
+.inr-text p{font-size:12px;color:#64748B;line-height:1.5}
+
+.pay-section{padding:2rem 1.5rem;border-bottom:0.5px solid #1E2D4A;background:#0D1426}
+.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.pay-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:12px;padding:0.9rem 1rem;display:flex;align-items:center;gap:10px}
+.pay-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.pay-card-text .pay-name{font-size:13px;font-weight:600;color:#E2E8F0}
+.pay-card-text .pay-desc{font-size:11px;color:#64748B;margin-top:2px}
+.pay-badge{display:inline-block;font-size:9px;font-weight:600;padding:2px 6px;border-radius:4px;margin-top:4px;letter-spacing:0.04em}
+.pay-badge.instant{background:rgba(52,211,153,0.15);color:#34D399}
+.pay-badge.fast{background:rgba(96,165,250,0.15);color:#60A5FA}
+
+.markets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.market-card{background:#111827;border:0.5px solid #1E2D4A;border-radius:12px;padding:1rem}
+.market-card:hover{border-color:#3B82F6}
+.mkt-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:0.65rem;font-size:19px}
+.market-card h3{font-size:14px;font-weight:600;color:#E2E8F0;margin-bottom:4px}
+.market-card p{font-size:12px;color:#64748B;line-height:1.4}
+
+.steps-row{display:flex;gap:0}
+.step-item{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:1rem 0.75rem;position:relative}
+.step-item:not(:last-child)::after{content:'';position:absolute;right:0;top:18px;width:0.5px;height:36px;background:#1E2D4A}
+.step-num{width:36px;height:36px;border-radius:50%;background:#1A56DB;color:#fff;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:0.6rem}
+.step-item h3{font-size:13px;font-weight:600;color:#E2E8F0;margin-bottom:4px}
+.step-item p{font-size:11px;color:#64748B;line-height:1.4}
+
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-q{padding:0.9rem 0;border-bottom:0.5px solid #1E2D4A}
+.faq-q:last-child{border-bottom:none}
+.faq-q h3{font-size:13px;font-weight:600;color:#CBD5E1;margin-bottom:5px;display:flex;align-items:center;gap:7px}
+.faq-q h3 i{font-size:14px;color:#3B82F6;flex-shrink:0}
+.faq-q p{font-size:12px;color:#64748B;line-height:1.6;padding-left:21px}
+
+.secure-row{display:flex;align-items:center;justify-content:center;gap:18px;padding:1rem 1.5rem;background:#0D1426;border-bottom:0.5px solid #1E2D4A;flex-wrap:wrap}
+.sec-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#64748B}
+.sec-item i{font-size:15px;color:#3B82F6}
+
+.cta-wrap{padding:2.5rem 1.5rem;text-align:center;background:#0D1426;border-bottom:0.5px solid #1E2D4A}
+.cta-wrap h2{font-size:22px;font-weight:600;color:#F1F5F9;margin-bottom:0.4rem;letter-spacing:-0.02em}
+.cta-wrap p{font-size:14px;color:#64748B;margin-bottom:1.5rem}
+.cta-btns{display:flex;flex-direction:column;align-items:center;gap:10px}
+.btn-blue{display:inline-flex;align-items:center;gap:8px;background:#1A56DB;color:#fff;font-size:14px;font-weight:600;padding:12px 30px;border-radius:10px;border:none;cursor:pointer;text-decoration:none}
+.btn-blue:hover{opacity:0.9}
+
+.footer{padding:1.25rem 1.5rem;text-align:center;background:#0A0F1E}
+.footer p{font-size:11px;color:#334155;line-height:1.7}
+</style>
+
+<h2 class="sr-only">Premium professional broker landing page with dark theme, IB benefits, and payment methods</h2>
+
+<div class="page">
+
+<div class="nav">
+  <div class="nav-logo">
+    <div class="logo-mark"><i class="ti ti-chart-candlestick" aria-hidden="true"></i></div>
+    <span class="logo-text">[Broker Name]</span>
+  </div>
+  <div class="nav-badge"><i class="ti ti-shield-check" aria-hidden="true"></i> Regulated &amp; Secure</div>
+</div>
+
+<div class="hero">
+  <div class="hero-tag"><i class="ti ti-globe" aria-hidden="true"></i> Trusted Global Trading Platform</div>
+  <h1>Your trusted partner<br>in <span class="accent">global trading</span></h1>
+  <p class="hero-sub">Access Forex, Commodities, Indices &amp; Crypto — with full INR support and instant UPI deposits for Indian traders.</p>
+  <div class="trust-pills">
+    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> Regulated broker</div>
+    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> INR deposits &amp; withdrawals</div>
+    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> UPI &amp; Crypto supported</div>
+    <div class="t-pill"><i class="ti ti-check" aria-hidden="true"></i> 24/7 support</div>
+  </div>
+  <a class="btn-wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20open%20a%20trading%20account" target="_blank">
+    <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Open account on WhatsApp
+  </a>
+  <p class="wa-note">Tap to chat directly — no forms, no wait</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-box"><div class="snum">10,000+</div><div class="slbl">Active traders</div></div>
+  <div class="stat-box"><div class="snum">50+</div><div class="slbl">Instruments</div></div>
+  <div class="stat-box"><div class="snum">Instant</div><div class="slbl">UPI deposits</div></div>
+  <div class="stat-box"><div class="snum">1–3 days</div><div class="slbl">INR withdrawals</div></div>
+</div>
+
+<div class="section alt">
+  <div class="sec-label">Introducing Broker Program</div>
+  <div class="sec-title">Become an IB — earn on every trade</div>
+  <div class="sec-sub">Refer clients and earn lifetime commissions on every trade they place. No cap, no limits, daily payouts in INR.</div>
+
+  <div class="ib-stat-row">
+    <div class="ib-stat"><div class="inum">Up to 60%</div><div class="ilbl">Revenue share</div></div>
+    <div class="ib-stat"><div class="inum">Daily</div><div class="ilbl">Commission payouts</div></div>
+    <div class="ib-stat"><div class="inum">Lifetime</div><div class="ilbl">Earnings per referral</div></div>
+  </div>
+
+  <div class="ib-grid">
+    <div class="ib-card">
+      <div class="ib-icon" style="background:rgba(96,165,250,0.12)"><i class="ti ti-cash" style="color:#60A5FA" aria-hidden="true"></i></div>
+      <h3>High commission</h3>
+      <p>Generous rebates on every trade by your referred clients — for life.</p>
+    </div>
+    <div class="ib-card">
+      <div class="ib-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-calendar-stats" style="color:#34D399" aria-hidden="true"></i></div>
+      <h3>Daily payouts</h3>
+      <p>Commissions credited daily — no waiting, no delays.</p>
+    </div>
+    <div class="ib-card">
+      <div class="ib-icon" style="background:rgba(96,165,250,0.12)"><i class="ti ti-users" style="color:#60A5FA" aria-hidden="true"></i></div>
+      <h3>Unlimited referrals</h3>
+      <p>More clients = more earnings. No referral cap ever.</p>
+    </div>
+    <div class="ib-card">
+      <div class="ib-icon" style="background:rgba(251,191,36,0.1)"><i class="ti ti-chart-line" style="color:#FCD34D" aria-hidden="true"></i></div>
+      <h3>Live dashboard</h3>
+      <p>Track clients, trades &amp; earnings in real time from your IB portal.</p>
+    </div>
+    <div class="ib-card">
+      <div class="ib-icon" style="background:rgba(167,139,250,0.1)"><i class="ti ti-gift" style="color:#A78BFA" aria-hidden="true"></i></div>
+      <h3>Marketing support</h3>
+      <p>Banners, landing pages &amp; creatives — all provided free.</p>
+    </div>
+    <div class="ib-card">
+      <div class="ib-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-currency-rupee" style="color:#34D399" aria-hidden="true"></i></div>
+      <h3>INR withdrawals</h3>
+      <p>Withdraw IB earnings directly in INR via UPI or bank transfer.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">How to become an IB</div>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-num">1</div>
       <div>
-        <strong>Dr. Arjun Mehta Neurology</strong>
-        <span>Premium neurological consultation and long-term care.</span>
+        <h4>Contact us on WhatsApp</h4>
+        <p>Reach out directly — our IB team will set you up fast, no paperwork hassle.</p>
       </div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">2</div>
       <div>
-        <span>Mon-Sat, 9:00 AM - 6:00 PM</span>
-        <span>NeuroCare Center, Medical District</span>
-        <span>+91 98765 43210</span>
+        <h4>Get your unique referral link</h4>
+        <p>Receive a personal IB link to share with your clients and network.</p>
       </div>
-    </footer>
-    <script>
-      const form = document.querySelector(".contact-form");
-      const status = document.querySelector(".form-status");
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <div>
+        <h4>Refer clients</h4>
+        <p>As soon as your referred clients start trading, your commissions begin instantly.</p>
+      </div>
+    </div>
+    <div class="how-step">
+      <div class="how-num">4</div>
+      <div>
+        <h4>Earn daily — withdraw in INR</h4>
+        <p>Rebates hit your account every day. Withdraw via UPI anytime.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        status.textContent = "Thank you. The clinic team will contact you to confirm the appointment.";
-        form.reset();
-      });
-    </script>
-  </body>
-</html>
+<div class="pay-section">
+  <div class="sec-label">Payment methods</div>
+  <div class="sec-title">Deposit &amp; withdraw your way</div>
+  <div class="sec-sub">Multiple fast &amp; secure options — all supporting INR.</div>
+  <div class="pay-grid">
+    <div class="pay-card">
+      <div class="pay-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-currency-rupee" style="color:#34D399" aria-hidden="true"></i></div>
+      <div class="pay-card-text">
+        <div class="pay-name">UPI</div>
+        <div class="pay-desc">GPay, PhonePe, Paytm</div>
+        <div class="pay-badge instant">Instant</div>
+      </div>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon" style="background:rgba(167,139,250,0.1)"><i class="ti ti-currency-bitcoin" style="color:#A78BFA" aria-hidden="true"></i></div>
+      <div class="pay-card-text">
+        <div class="pay-name">Crypto</div>
+        <div class="pay-desc">USDT, BTC, ETH</div>
+        <div class="pay-badge instant">Instant</div>
+      </div>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon" style="background:rgba(96,165,250,0.1)"><i class="ti ti-building-bank" style="color:#60A5FA" aria-hidden="true"></i></div>
+      <div class="pay-card-text">
+        <div class="pay-name">Net banking</div>
+        <div class="pay-desc">All major banks</div>
+        <div class="pay-badge fast">Same day</div>
+      </div>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon" style="background:rgba(251,191,36,0.1)"><i class="ti ti-credit-card" style="color:#FCD34D" aria-hidden="true"></i></div>
+      <div class="pay-card-text">
+        <div class="pay-name">Debit / credit card</div>
+        <div class="pay-desc">Visa, Mastercard</div>
+        <div class="pay-badge fast">Fast</div>
+      </div>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-transfer" style="color:#34D399" aria-hidden="true"></i></div>
+      <div class="pay-card-text">
+        <div class="pay-name">IMPS / NEFT / RTGS</div>
+        <div class="pay-desc">Direct bank transfer</div>
+        <div class="pay-badge fast">1–2 days</div>
+      </div>
+    </div>
+    <div class="pay-card">
+      <div class="pay-icon" style="background:rgba(96,165,250,0.1)"><i class="ti ti-device-mobile" style="color:#60A5FA" aria-hidden="true"></i></div>
+      <div class="pay-card-text">
+        <div class="pay-name">Mobile wallets</div>
+        <div class="pay-desc">Paytm &amp; more</div>
+        <div class="pay-badge instant">Instant</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section alt">
+  <div class="sec-label">Why choose us</div>
+  <div class="inr-banner">
+    <div class="inr-icon"><i class="ti ti-currency-rupee" aria-hidden="true"></i></div>
+    <div class="inr-text">
+      <h3>100% INR deposit &amp; withdrawal support</h3>
+      <p>No currency conversion. Fund and receive payouts directly in Indian Rupees — via UPI, bank, or crypto.</p>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><i class="ti ti-bolt" aria-hidden="true"></i><span>Fast account opening</span></div>
+    <div class="why-card"><i class="ti ti-adjustments-horizontal" aria-hidden="true"></i><span>Competitive trading conditions</span></div>
+    <div class="why-card"><i class="ti ti-wallet" aria-hidden="true"></i><span>Multiple payment methods</span></div>
+    <div class="why-card"><i class="ti ti-chart-candlestick" aria-hidden="true"></i><span>Advanced trading tools</span></div>
+    <div class="why-card"><i class="ti ti-headset" aria-hidden="true"></i><span>24/7 customer support</span></div>
+    <div class="why-card"><i class="ti ti-shield-check" aria-hidden="true"></i><span>Secure &amp; regulated</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Popular markets</div>
+  <div class="markets-grid">
+    <div class="market-card">
+      <div class="mkt-icon" style="background:rgba(96,165,250,0.1)"><i class="ti ti-currency-dollar" style="color:#60A5FA" aria-hidden="true"></i></div>
+      <h3>Forex</h3>
+      <p>Major, minor &amp; exotic currency pairs</p>
+    </div>
+    <div class="market-card">
+      <div class="mkt-icon" style="background:rgba(251,191,36,0.1)"><i class="ti ti-coin" style="color:#FCD34D" aria-hidden="true"></i></div>
+      <h3>Commodities</h3>
+      <p>Gold, Silver, Oil &amp; more</p>
+    </div>
+    <div class="market-card">
+      <div class="mkt-icon" style="background:rgba(52,211,153,0.1)"><i class="ti ti-chart-bar" style="color:#34D399" aria-hidden="true"></i></div>
+      <h3>Indices</h3>
+      <p>Global indices from one account</p>
+    </div>
+    <div class="market-card">
+      <div class="mkt-icon" style="background:rgba(167,139,250,0.1)"><i class="ti ti-currency-bitcoin" style="color:#A78BFA" aria-hidden="true"></i></div>
+      <h3>Crypto</h3>
+      <p>BTC, ETH &amp; digital assets</p>
+    </div>
+  </div>
+</div>
+
+<div class="section alt">
+  <div class="sec-label">Get started</div>
+  <div class="sec-title">3 simple steps to start trading</div>
+  <div class="steps-row">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <h3>Register</h3>
+      <p>Open account via WhatsApp in minutes</p>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <h3>Verify</h3>
+      <p>Complete KYC quickly &amp; securely</p>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <h3>Trade</h3>
+      <p>Deposit in INR or crypto &amp; go live</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-label">Frequently asked questions</div>
+  <div class="faq-list">
+    <div class="faq-q">
+      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>How do I join the IB program?</h3>
+      <p>Contact us on WhatsApp — our team will guide you step by step and activate your IB account fast.</p>
+    </div>
+    <div class="faq-q">
+      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>How much commission does an IB earn?</h3>
+      <p>Up to 60% revenue share based on your referred clients' trading volume — with no cap on referrals.</p>
+    </div>
+    <div class="faq-q">
+      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>Can I deposit using UPI or crypto?</h3>
+      <p>Yes — both UPI (GPay, PhonePe, Paytm) and crypto (USDT, BTC, ETH) deposits are available with instant processing.</p>
+    </div>
+    <div class="faq-q">
+      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>Can I deposit and withdraw in INR?</h3>
+      <p>Yes — full INR support via UPI, net banking, IMPS/NEFT/RTGS, and debit/credit cards.</p>
+    </div>
+    <div class="faq-q">
+      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>How long do withdrawals take?</h3>
+      <p>UPI and crypto withdrawals are processed quickly. Bank withdrawals complete within 1–3 business days.</p>
+    </div>
+    <div class="faq-q">
+      <h3><i class="ti ti-circle-check" aria-hidden="true"></i>Are my funds and data safe?</h3>
+      <p>We use industry-standard SSL encryption and maintain segregated client accounts for full fund security.</p>
+    </div>
+  </div>
+</div>
+
+<div class="secure-row">
+  <div class="sec-item"><i class="ti ti-lock" aria-hidden="true"></i> SSL encrypted</div>
+  <div class="sec-item"><i class="ti ti-shield-check" aria-hidden="true"></i> Regulated broker</div>
+  <div class="sec-item"><i class="ti ti-building-bank" aria-hidden="true"></i> Segregated client funds</div>
+  <div class="sec-item"><i class="ti ti-eye-off" aria-hidden="true"></i> Data privacy protected</div>
+</div>
+
+<div class="cta-wrap">
+  <h2>Ready to grow your income?</h2>
+  <p>Join as a trader or IB partner — full INR &amp; crypto support available.</p>
+  <div class="cta-btns">
+    <a class="btn-wa" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20start%20trading" target="_blank">
+      <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Start trading now
+    </a>
+    <a class="btn-blue" href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20join%20as%20an%20IB%20partner" target="_blank">
+      <i class="ti ti-users" aria-hidden="true"></i> Apply as an IB partner
+    </a>
+  </div>
+  <p class="wa-note" style="margin-top:0.75rem">Both buttons connect you directly via WhatsApp</p>
+</div>
+
+<div class="footer">
+  <p><strong style="color:#334155">Risk warning:</strong> Trading leveraged financial instruments carries significant risk and may not be suitable for all investors. You may lose some or all of your invested capital. Please ensure you fully understand the risks before trading.<br><br>© [Year] [Broker Name]. All Rights Reserved.</p>
+</div>
+
+</div>
