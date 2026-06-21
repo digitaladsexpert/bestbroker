@@ -329,7 +329,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-500);outline-o
       <p class="hero-sub">Forex, Commodities, Indices &amp; Crypto on one regulated account — instant UPI deposits, no currency conversion, ever.</p>
 
       <div class="hero-btns">
-        <a class="btn btn-orange" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank" rel="noopener">Open Free Account →</a>
+        <a class="btn btn-orange" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank"
+     rel="noopener"
+     onclick="fbq('track', 'Purchase', {
+       value: 0,
+       currency: 'USD'
+     });">Open Free Account →</a>
         <a class="btn btn-ghost-light" href="#ib">Become an IB Partner</a>
       </div>
 
@@ -491,9 +496,29 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--blue-500);outline-o
       <h2>Ready to start?</h2>
       <p>Trade across four global markets — or earn from those who do. Both begin with one message.</p>
       <div class="final-btns">
-        <a class="btn btn-orange" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank" rel="noopener">Open Free Account →</a>
-        <a class="btn btn-outline" href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w" target="_blank" rel="noopener">Apply as IB Partner</a>
-      </div>
+        
+  <a class="btn btn-orange"
+     href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w"
+     target="_blank"
+     rel="noopener"
+     onclick="fbq('track', 'Purchase', {
+       value: 0,
+       currency: 'USD'
+     });">
+     Open Free Account →
+  </a>
+
+  <a class="btn btn-outline"
+     href="https://whatsapp.com/channel/0029VbDVjSg4Y9lhsVBaP63w"
+     target="_blank"
+     rel="noopener"
+     onclick="fbq('track', 'Purchase', {
+       value: 0,
+       currency: 'USD'
+     });">
+     Apply as IB Partner
+  </a>
+</div>
     </div>
   </section>
 
